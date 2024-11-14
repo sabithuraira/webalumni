@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-    <link rel="icon" href="/img/haisstis.png" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body class="bg-[#F5F7FA]">
-    @include('user.navbar')
-
+@section('content')
     <div class="mt-4 bg-[#F5F7FA] w-[700px] mx-auto">
         <div class="pb-2">
             <div class="flex items-center justify-between">
@@ -70,8 +57,4 @@
     <div class="flex justify-center my-4">
         {{ $alumnis->appends(['search' => request()->get('search')])->onEachSide(2)->links('vendor.pagination.tailwind') }}
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+@endsection
