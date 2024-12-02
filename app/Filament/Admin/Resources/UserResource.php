@@ -21,6 +21,7 @@ use Filament\Forms\Components\DatePicker;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
+    protected static ?string $navigationLabel = 'User';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
