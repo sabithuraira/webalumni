@@ -31,6 +31,10 @@
                     class="text-white no-underline font-bold text-[15px] {{ request()->is('dashboard') ? 'border-b-2 border-white' : '' }}">
                     DASHBOARD
                 </a>
+                <a href="/admin"
+                    class="text-white no-underline font-bold text-[15px] {{ request()->is('admin') ? 'border-b-2 border-white' : '' }}">
+                    ADMIN
+                </a>
                 <a href="/keuangan"
                     class="text-white no-underline font-bold text-[15px] {{ request()->is('keuangan') ? 'border-b-2 border-white' : '' }}">
                     KEUANGAN

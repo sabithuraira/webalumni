@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Admin\Resources\AlumniResource\Pages;
+namespace App\Filament\Admin\Resources\BeritaResource\Pages;
 
 use Filament\Actions;
 use Illuminate\Support\Facades\Auth;
 use Filament\Resources\Pages\EditRecord;
-use App\Filament\Admin\Resources\AlumniResource;
+use App\Filament\Admin\Resources\BeritaResource;
 
-class EditAlumni extends EditRecord
+class EditBerita extends EditRecord
 {
-    protected static string $resource = AlumniResource::class;
+    protected static string $resource = BeritaResource::class;
 
     protected function getRedirectUrl(): string
     {

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Admin\Resources\AlumniResource\Pages;
+namespace App\Filament\Admin\Resources\BeritaResource\Pages;
 
-use Illuminate\Support\Facades\Auth;
-use App\Filament\Admin\Resources\AlumniResource;
+use App\Filament\Admin\Resources\BeritaResource;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Support\Facades\Auth;
 
-class CreateAlumni extends CreateRecord
+class CreateBerita extends CreateRecord
 {
-    protected static string $resource = AlumniResource::class;
+    protected static string $resource = BeritaResource::class;
 
     protected function getRedirectUrl(): string
     {
