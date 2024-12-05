@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="mt-4 w-[1000px] mx-auto">
+    <div class="mt-4 mx-5">
         <div class="row">
             <!-- Total Card -->
             <div class="col-md-4 justify-center rounded-[12px]">
@@ -18,7 +18,7 @@
                 <div class="card border-0 shadow-sm text-[#343C6A] bg-white">
                     <div class="card-body text-center">
                         <h5 class="card-title font-bold">Pemasukan</h5>
-                        <p class="card-text text-2xl border-t-2">{{ number_format($masuk, 0, ',', '.') }}</p>
+                        <p class="card-text text-2xl border-t-2 text-[#28A745]">{{ number_format($masuk, 0, ',', '.') }}</p>
                     </div>
                 </div>
             </div>
@@ -28,14 +28,14 @@
                 <div class="card border-0 shadow-sm text-[#343C6A] bg-white">
                     <div class="card-body text-center">
                         <h5 class="card-title font-bold">Pengeluaran</h5>
-                        <p class="card-text text-2xl border-t-2">{{ number_format($keluar, 0, ',', '.') }}</p>
+                        <p class="card-text text-2xl border-t-2 text-[#E3342F]">{{ number_format($keluar, 0, ',', '.') }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-[#F5F7FA] w-[1000px] mx-auto">
+    <div class="bg-[#F5F7FA] mx-5 mt-4">
         <div class="py-2">
             <div class="flex items-center justify-between">
                 <!-- Title -->
@@ -45,11 +45,37 @@
 
                 <!-- Search -->
                 <form action="{{ route('page.keuangan') }}" method="GET" class="flex items-center">
+
+                    <select class="form-control w-[200px] mr-2" name="month">
+                        <option value="">- Pilih Bulan -</option>
+                        @foreach ( config('app.months') as $key=>$value)
+                            <option value="{{ $key }}"  
+                                @if($month==$key)
+                                    selected
+                                @endif >{{ $value }}</option>
+                        @endforeach
+                    </select>
+
+                    
+                    <select class="form-control w-[200px] mr-2" name="year">
+                        <option value="">- Pilih Tahun -</option>
+                        @for ($i=2023;$i<=date('Y');$i++)
+                            <option value="{{ $i }}" 
+                                @if($year==$i)
+                                    selected
+                                @endif >{{ $i }}</option>
+                        @endfor
+                    </select>
+
                     <input type="text" name="search" placeholder="Search..."
-                        class="form-control w-[200px] border border-gray-300 rounded-[8px]"
+                        class="form-control w-[200px]"
                         value="{{ request()->get('search') }}">
-                    <button type="submit" class="h-[34px] ml-2 bg-[#343C6A] text-white px-2 rounded-[8px]">
+                    <button type="submit" name='action' value="1" class="h-[34px] ml-2 bg-[#343C6A] text-white px-2 rounded-[8px]">
                         Search
+                    </button>
+                    
+                    <button type="submit" name='action' value="2" class="h-[34px] ml-2 bg-success text-white px-2 rounded-[8px]">
+                        Export Excel
                     </button>
                 </form>
             </div>

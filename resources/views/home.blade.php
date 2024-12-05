@@ -27,11 +27,10 @@
 
     <!-- Quote -->
     <div class="text-center text-[#343C6A] text-[20px] font-semibold mt-5 mb-2 mx-[100px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo augue ac est accumsan laoreet.
-        Suspendisse ultricies sem ut diam rhoncus.
+        Once a brother, always a brother, no matter the distance, no matter the difference, and no matter the issue.
     </div>
     <div class="text-center text-[#343C6A] text-[15px] mb-5">
-        - Anonymous -
+        - Byron Pulsifer -
     </div>
 
     <!-- Gallery -->
